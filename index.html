@@ -1,0 +1,46 @@
+<style>    
+        
+        .border-pattern{
+            left:4mm;
+            height: 628px;
+            width:802px;
+            background-image: url("https://i.ibb.co/72DpZHJ/Cer1-AW-3.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .inner-content{
+              margin:2mm;
+              padding:10mm;
+            height:148mm;
+              text-align:center;
+        }
+        .name{
+            margin-top:180px;
+            font-size:20pt;
+        }
+        .course-name {
+            margin-top: 70px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .issue-date{
+            margin-top: 30px;
+        }
+        .serial{
+            font-size: 12px;
+            margin-top: 30px;
+            color:#9e9c9c;
+        }
+</style>
+
+<div class="border-pattern">
+    <div class="content">
+            <div class="inner-content">
+                <p class="name">{{current_user.name}}</p>
+                <p class="course-name">ได้ผ่านการเรียนหลักสูตร {{course.name}}</p>
+                <p class="issue-date">ให้ไว้ ณ วันที่  {{ course.report_card.certificate_issued_at | date: "%d-%m-%Y" }}</p>
+                <p class="serial">รหัสยืนยัน : {{course.report_card.certificate_serial_number}}</p>
+            </div>
+    </div>
+</div>
